@@ -236,8 +236,111 @@ function initHeroWaves() {
   });
 }
 
+function initGalleryLightbox() {
+  const grid = document.querySelector(".gallery-grid");
+  if (!grid || document.querySelector(".gallery-lightbox")) return;
+
+  const lightbox = document.createElement("div");
+  lightbox.className = "gallery-lightbox";
+  lightbox.setAttribute("role", "dialog");
+  lightbox.setAttribute("aria-modal", "true");
+  lightbox.setAttribute("aria-label", "Bild ansehen");
+  lightbox.innerHTML = `
+    <button class="gallery-lightbox__close" type="button" aria-label="Schliessen">×</button>
+    <button class="gallery-lightbox__nav gallery-lightbox__nav--prev" type="button" aria-label="Vorheriges Bild">‹</button>
+    <figure class="gallery-lightbox__figure">
+      <img class="gallery-lightbox__image" alt="">
+      <figcaption class="gallery-lightbox__caption"></figcaption>
+    </figure>
+    <button class="gallery-lightbox__nav gallery-lightbox__nav--next" type="button" aria-label="Naechstes Bild">›</button>
+  `;
+  document.body.appendChild(lightbox);
+
+  const image = lightbox.querySelector(".gallery-lightbox__image");
+  const caption = lightbox.querySelector(".gallery-lightbox__caption");
+  const closeButton = lightbox.querySelector(".gallery-lightbox__close");
+  const prevButton = lightbox.querySelector(".gallery-lightbox__nav--prev");
+  const nextButton = lightbox.querySelector(".gallery-lightbox__nav--next");
+  let activeIndex = 0;
+
+  function getItems() {
+    return [...grid.querySelectorAll(".gallery-tile[data-image-url]:not([data-image-url=''])")];
+  }
+
+  function getCaption(tile) {
+    const title = tile.querySelector("h2")?.textContent?.trim() || "Galeriebild";
+    const number = tile.querySelector("span")?.textContent?.trim();
+    return number ? `${number} · ${title}` : title;
+  }
+
+  function render(index) {
+    const items = getItems();
+    if (!items.length) return;
+    activeIndex = (index + items.length) % items.length;
+    const tile = items[activeIndex];
+    image.src = tile.dataset.imageUrl;
+    image.alt = getCaption(tile);
+    caption.textContent = getCaption(tile);
+    prevButton.hidden = items.length < 2;
+    nextButton.hidden = items.length < 2;
+  }
+
+  function open(tile) {
+    const items = getItems();
+    const index = items.indexOf(tile);
+    if (index < 0) return;
+    render(index);
+    lightbox.classList.add("is-open");
+    document.body.classList.add("lightbox-open");
+    closeButton.focus();
+  }
+
+  function close() {
+    lightbox.classList.remove("is-open");
+    document.body.classList.remove("lightbox-open");
+    image.removeAttribute("src");
+  }
+
+  grid.addEventListener("click", (event) => {
+    const tile = event.target.closest(".gallery-tile[data-image-url]:not([data-image-url=''])");
+    if (!tile) return;
+    open(tile);
+  });
+
+  grid.addEventListener("keydown", (event) => {
+    if (event.key !== "Enter" && event.key !== " ") return;
+    const tile = event.target.closest(".gallery-tile[data-image-url]:not([data-image-url=''])");
+    if (!tile) return;
+    event.preventDefault();
+    open(tile);
+  });
+
+  document.addEventListener("cms:content-loaded", () => {
+    getItems().forEach((tile) => {
+      tile.setAttribute("role", "button");
+      tile.setAttribute("tabindex", "0");
+      tile.setAttribute("aria-label", `${getCaption(tile)} vergroessern`);
+    });
+  });
+
+  closeButton.addEventListener("click", close);
+  prevButton.addEventListener("click", () => render(activeIndex - 1));
+  nextButton.addEventListener("click", () => render(activeIndex + 1));
+  lightbox.addEventListener("click", (event) => {
+    if (event.target === lightbox) close();
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (!lightbox.classList.contains("is-open")) return;
+    if (event.key === "Escape") close();
+    if (event.key === "ArrowLeft") render(activeIndex - 1);
+    if (event.key === "ArrowRight") render(activeIndex + 1);
+  });
+}
+
 document.addEventListener("DOMContentLoaded", async () => {
   initHeroWaves();
+  initGalleryLightbox();
 
   try {
     // ✅ W folderze /reiki/ muszą być ścieżki RELATYWNE
@@ -246,6 +349,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     initBurger();
     initReveal();
+    initGalleryLightbox();
   } catch (e) {
     console.error(e);
   }
