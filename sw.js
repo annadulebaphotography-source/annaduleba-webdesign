@@ -1,5 +1,5 @@
-const CACHE_VERSION = "anna-duleba-offline-v1";
-const RUNTIME_CACHE = "anna-duleba-runtime-v1";
+const CACHE_VERSION = "anna-duleba-offline-v2";
+const RUNTIME_CACHE = "anna-duleba-runtime-v2";
 
 const PRECACHE_URLS = [
   "/",
@@ -51,7 +51,13 @@ async function networkFirst(request) {
     if (response && response.ok) await cache.put(request, response.clone());
     return response;
   } catch {
-    return (await cache.match(request)) || (await caches.match("/offline.html"));
+    const url = new URL(request.url);
+    return (
+      (await cache.match(request)) ||
+      (await caches.match(request)) ||
+      (await caches.match(url.pathname)) ||
+      (await caches.match("/offline.html"))
+    );
   }
 }
 
