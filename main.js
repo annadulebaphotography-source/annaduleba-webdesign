@@ -371,7 +371,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   try {
     // ✅ W folderze /reiki/ muszą być ścieżki RELATYWNE
-    await loadPart("#site-header", "/header.html?v=shared-header-2");
+    await loadPart("#site-header", "/header.html?v=legal-1");
     await loadPart("#site-footer", "/footer.html?v=legal-1");
 
     initBurger();
