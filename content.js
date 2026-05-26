@@ -104,6 +104,12 @@ function readLocalContent() {
   }
 }
 
+function pruneEmptyValues(data) {
+  return Object.fromEntries(
+    Object.entries(data).filter(([, value]) => typeof value !== "string" || value !== "")
+  );
+}
+
 async function resolveLocalContent(localData) {
   const resolved = {};
 
@@ -156,8 +162,9 @@ export async function loadPageContent() {
   const editableNodes = document.querySelectorAll("[data-cms], [data-cms-image]");
   if (!editableNodes.length) return {};
 
-  const localFirstData = { ...readFallbackContent(), ...(await resolveLocalContent(readLocalContent())) };
-  currentPageData = localFirstData;
+  const fallbackData = pruneEmptyValues(readFallbackContent());
+  const localData = await resolveLocalContent(readLocalContent());
+  currentPageData = { ...fallbackData, ...localData };
   await applyContentToNodes(editableNodes, currentPageData);
   document.dispatchEvent(new CustomEvent("cms:local-content-loaded", { detail: currentPageData }));
 
@@ -168,7 +175,7 @@ export async function loadPageContent() {
       return currentPageData;
     }
 
-    currentPageData = { ...(snap.data() || {}), ...localFirstData };
+    currentPageData = { ...fallbackData, ...(snap.data() || {}), ...localData };
     await applyContentToNodes(editableNodes, currentPageData);
     document.dispatchEvent(new CustomEvent("cms:content-loaded", { detail: currentPageData }));
     return currentPageData;

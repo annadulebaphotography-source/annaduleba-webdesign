@@ -2904,17 +2904,17 @@ body.page-contact-webdesign .site-header-overlay{
 
 @media (max-width:800px){
   .site-header .nav-container{
-    min-height:72px;
-    padding:8px 18px 8px 20px;
+    min-height:64px;
+    padding:6px 16px 6px 18px;
   }
 
   .site-header .logo img{
-    width:118px;
+    width:92px;
   }
 
   .site-header .burger{
-    width:48px;
-    height:48px;
+    width:42px;
+    height:42px;
     margin-left:auto;
     margin-right:2px;
     align-items:center;
@@ -2938,7 +2938,7 @@ body.page-contact-webdesign .site-header-overlay{
   }
 
   .site-header .nav{
-    top:72px;
+    top:64px;
     left:12px;
     right:12px;
     padding:16px 0;
@@ -2967,12 +2967,18 @@ body.page-contact-webdesign .site-header-overlay{
 
 @media (max-width:768px){
   .home-hero__content{
-    padding:30px 18px 48px;
+    padding:24px 18px 42px;
   }
 
   body.page-webdesign .home-hero__brand{
-    height:188px !important;
-    min-height:188px !important;
+    height:auto !important;
+    min-height:0 !important;
+    padding:6px 0 4px;
+    overflow:visible !important;
+  }
+
+  body.page-webdesign .home-hero__brand img{
+    width:min(100%, 760px) !important;
   }
 
   .offer-hero,
@@ -2980,11 +2986,11 @@ body.page-contact-webdesign .site-header-overlay{
   .strategy-hero,
   .about-hero,
   .contact-hero{
-    padding:62px 0 54px !important;
+    padding:54px 0 46px !important;
   }
 
   .gallery-hero{
-    padding:70px 0 54px !important;
+    padding:58px 0 46px !important;
   }
 
   .home-hero h1,
@@ -2994,8 +3000,8 @@ body.page-contact-webdesign .site-header-overlay{
   .about-hero h1,
   .contact-hero h1,
   .gallery-hero h1{
-    font-size:clamp(38px, 11.8vw, 58px) !important;
-    line-height:1.07 !important;
+    font-size:clamp(32px, 9.6vw, 46px) !important;
+    line-height:1.09 !important;
     overflow-wrap:normal;
     word-break:normal;
     hyphens:none;
@@ -3008,8 +3014,8 @@ body.page-contact-webdesign .site-header-overlay{
   .about-hero p,
   .contact-hero p,
   .gallery-hero .muted{
-    font-size:17px !important;
-    line-height:1.58 !important;
+    font-size:16px !important;
+    line-height:1.55 !important;
   }
 
   .home-actions{
@@ -3031,6 +3037,55 @@ body.page-contact-webdesign .site-header-overlay{
     transform:translateY(1px) scale(.99);
     box-shadow:0 6px 14px rgba(42,31,35,.08);
   }
+
+  .home-intro,
+  .home-process,
+  .home-services,
+  .home-gallery-teaser,
+  .brand-coherence{
+    padding-top:58px;
+    padding-bottom:58px;
+  }
+
+  .home-intro h2,
+  .home-process h2,
+  .brand-coherence h2,
+  .home-services h2,
+  .home-gallery-teaser h2,
+  .home-final-cta h2{
+    font-size:clamp(30px, 8vw, 40px);
+    line-height:1.08;
+  }
+
+  .service-card{
+    grid-template-rows:150px auto;
+  }
+
+  .service-card__media{
+    min-height:150px;
+  }
+
+  .service-card__body,
+  .contact-panel,
+  .contact-card{
+    padding:20px;
+  }
+
+  .service-card h3{
+    margin-top:18px;
+    font-size:clamp(25px, 7vw, 32px);
+  }
+
+  .gallery-tile,
+  .gallery-tile--large,
+  .gallery-tile--wide{
+    min-height:220px;
+    padding:18px;
+  }
+
+  .about-photo-placeholder{
+    min-height:280px;
+  }
 }
 
 @media (max-width:420px){
@@ -3041,7 +3096,7 @@ body.page-contact-webdesign .site-header-overlay{
   .about-hero h1,
   .contact-hero h1,
   .gallery-hero h1{
-    font-size:clamp(34px, 10.8vw, 46px) !important;
+    font-size:clamp(30px, 9.8vw, 40px) !important;
   }
 
   .offer-hero,
@@ -3050,6 +3105,6 @@ body.page-contact-webdesign .site-header-overlay{
   .about-hero,
   .contact-hero,
   .gallery-hero{
-    padding-top:50px !important;
+    padding-top:44px !important;
   }
 }

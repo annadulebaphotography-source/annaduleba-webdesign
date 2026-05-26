@@ -255,6 +255,14 @@ if (document.readyState !== "loading") {
   initHeroWaves();
 }
 
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("/sw.js").catch((error) => {
+      console.warn("Offline cache registration failed:", error);
+    });
+  });
+}
+
 // --- HERO subtle motion ---
 (function () {
   function extractUrl(bg) {
