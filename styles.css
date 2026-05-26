@@ -2790,6 +2790,98 @@ body.page-contact-webdesign .site-header-overlay{
   position:sticky;
 }
 
+footer{
+  padding:28px 18px;
+  border-top:1px solid var(--line);
+  background:#fff;
+  color:rgba(42,31,35,.68);
+}
+
+.footer-inner{
+  width:min(1100px, calc(100% - 32px));
+  margin:0 auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
+  flex-wrap:wrap;
+}
+
+.footer-inner p{
+  margin:0;
+}
+
+.footer-legal{
+  display:flex;
+  gap:16px;
+  flex-wrap:wrap;
+}
+
+.footer-legal a{
+  color:var(--accent-strong);
+  text-decoration:none;
+}
+
+.footer-legal a:hover{
+  color:var(--accent);
+}
+
+.page-legal main{
+  padding-top:0 !important;
+}
+
+.page-legal .site-header-overlay{
+  position:sticky;
+}
+
+.legal-hero{
+  padding:96px 0 64px;
+  background:
+    radial-gradient(circle at 12% 38%, rgba(222,0,167,.12), transparent 34%),
+    linear-gradient(112deg, rgba(222,0,167,.08) 0%, rgba(255,255,255,.88) 38%, rgba(246,242,234,.9) 100%);
+  border-bottom:1px solid var(--line);
+}
+
+.legal-hero h1{
+  max-width:920px;
+  margin:10px 0 0;
+  color:var(--accent-strong);
+  font-family:Georgia, 'Times New Roman', serif;
+  font-size:clamp(44px, 6vw, 82px);
+  font-weight:400;
+  line-height:1.04;
+}
+
+.legal-content{
+  max-width:880px;
+  padding-top:72px;
+  padding-bottom:96px;
+}
+
+.legal-content h2{
+  margin:34px 0 10px;
+  color:var(--accent-strong);
+  font-family:Georgia, 'Times New Roman', serif;
+  font-size:clamp(26px, 3vw, 36px);
+  font-weight:400;
+  line-height:1.12;
+}
+
+.legal-content h2:first-child{
+  margin-top:0;
+}
+
+.legal-content p{
+  color:var(--muted);
+  font-size:17px;
+  line-height:1.75;
+}
+
+.legal-content a{
+  color:var(--accent-strong);
+  overflow-wrap:anywhere;
+}
+
 .contact-hero{
   padding:116px 0 88px;
   background:
@@ -3071,7 +3163,8 @@ body.page-contact-webdesign .site-header-overlay{
   body.page-webdesign-offer .offer-hero,
   .strategy-hero,
   .about-hero,
-  .contact-hero{
+  .contact-hero,
+  .legal-hero{
     padding:54px 0 46px !important;
   }
 
@@ -3085,7 +3178,8 @@ body.page-contact-webdesign .site-header-overlay{
   .strategy-hero h1,
   .about-hero h1,
   .contact-hero h1,
-  .gallery-hero h1{
+  .gallery-hero h1,
+  .legal-hero h1{
     font-size:clamp(32px, 9.6vw, 46px) !important;
     line-height:1.09 !important;
     overflow-wrap:normal;
@@ -3099,7 +3193,8 @@ body.page-contact-webdesign .site-header-overlay{
   .strategy-hero p,
   .about-hero p,
   .contact-hero p,
-  .gallery-hero .muted{
+  .gallery-hero .muted,
+  .legal-content p{
     font-size:16px !important;
     line-height:1.55 !important;
   }
@@ -3220,6 +3315,17 @@ body.page-contact-webdesign .site-header-overlay{
   .about-photo-placeholder{
     min-height:280px;
   }
+
+  .legal-content{
+    padding-top:50px;
+    padding-bottom:72px;
+  }
+
+  .footer-inner{
+    width:100%;
+    justify-content:center;
+    text-align:center;
+  }
 }
 
 @media (max-width:420px){
@@ -3229,7 +3335,8 @@ body.page-contact-webdesign .site-header-overlay{
   .strategy-hero h1,
   .about-hero h1,
   .contact-hero h1,
-  .gallery-hero h1{
+  .gallery-hero h1,
+  .legal-hero h1{
     font-size:clamp(30px, 9.8vw, 40px) !important;
   }
 
@@ -3238,7 +3345,8 @@ body.page-contact-webdesign .site-header-overlay{
   .strategy-hero,
   .about-hero,
   .contact-hero,
-  .gallery-hero{
+  .gallery-hero,
+  .legal-hero{
     padding-top:44px !important;
   }
 }

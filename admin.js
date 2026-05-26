@@ -5,7 +5,7 @@ import {
   onAuthStateChanged
 } from "./firebase.js?v=firestore-longpoll-1";
 import { firebaseProjectId } from "./firebase.js?v=firestore-longpoll-1";
-import { currentPageId, pageRef } from "./content.js?v=local-first-3";
+import { currentPageId, pageRef } from "./content.js?v=local-first-4";
 
 const CLOUDINARY_CLOUD_NAME = "dqmda8upo";
 const CLOUDINARY_UPLOAD_PRESET = "anna_cms_unsigned";

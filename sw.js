@@ -1,5 +1,5 @@
-const CACHE_VERSION = "anna-duleba-offline-v3";
-const RUNTIME_CACHE = "anna-duleba-runtime-v3";
+const CACHE_VERSION = "anna-duleba-offline-v6";
+const RUNTIME_CACHE = "anna-duleba-runtime-v6";
 
 const PRECACHE_URLS = [
   "/",
@@ -9,14 +9,18 @@ const PRECACHE_URLS = [
   "/kontakt.html",
   "/ueber-mich.html",
   "/worum.html",
+  "/impressum/",
+  "/impressum/index.html",
+  "/datenschutz/",
+  "/datenschutz/index.html",
   "/offline.html",
-  "/styles.css?v=mobile-atelier-4",
-  "/main.js?v=mobile-atelier-4",
+  "/styles.css?v=legal-1",
+  "/main.js?v=legal-3",
   "/content.js?v=local-first-4",
-  "/admin.js?v=cloudinary-5",
+  "/admin.js?v=cloudinary-6",
   "/firebase.js?v=firestore-longpoll-1",
   "/header.html?v=shared-header-2",
-  "/footer.html?v=shared-header-2",
+  "/footer.html?v=legal-1",
   "/logo-digital-atelier-cropped.png",
   "/hero-digital-atelier-banner-v3.png",
   "/favicon.svg",

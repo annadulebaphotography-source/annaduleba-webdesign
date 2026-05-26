@@ -338,14 +338,41 @@ function initGalleryLightbox() {
   });
 }
 
+function shouldLoadAdminTools() {
+  return ["localhost", "127.0.0.1"].includes(window.location.hostname) ||
+    new URLSearchParams(window.location.search).has("admin") ||
+    window.localStorage.getItem("showCmsLogin") === "1";
+}
+
+function loadAdminTools() {
+  if (document.querySelector('script[data-admin-tools="true"]')) return;
+  const script = document.createElement("script");
+  script.type = "module";
+  script.src = "/admin.js?v=cloudinary-6";
+  script.dataset.adminTools = "true";
+  document.body.appendChild(script);
+}
+
+function initAdminLoader() {
+  if (shouldLoadAdminTools()) loadAdminTools();
+
+  document.addEventListener("keydown", (event) => {
+    if (event.ctrlKey && event.altKey && event.key.toLowerCase() === "a") {
+      window.localStorage.setItem("showCmsLogin", "1");
+      loadAdminTools();
+    }
+  });
+}
+
 document.addEventListener("DOMContentLoaded", async () => {
   initHeroWaves();
   initGalleryLightbox();
+  initAdminLoader();
 
   try {
     // ✅ W folderze /reiki/ muszą być ścieżki RELATYWNE
-    await loadPart("#site-header", "header.html?v=shared-header-2");
-    await loadPart("#site-footer", "footer.html?v=shared-header-2");
+    await loadPart("#site-header", "/header.html?v=shared-header-2");
+    await loadPart("#site-footer", "/footer.html?v=legal-1");
 
     initBurger();
     initReveal();
