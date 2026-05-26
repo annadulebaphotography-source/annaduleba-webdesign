@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="faviconTitle">
+  <title id="faviconTitle">Anna Duleba Digital Atelier</title>
+  <rect width="64" height="64" rx="14" fill="#fffafd"/>
+  <g fill="none" stroke="#c89bc8" stroke-linecap="round">
+    <path d="M18 48a23 23 0 0 1 2-34" stroke-width="2.1" stroke-dasharray="18 5 4 6"/>
+    <path d="M14 42a26 26 0 0 1 22-34" stroke-width="1.7" stroke-dasharray="12 5 3 6"/>
+    <path d="M24 55a26 26 0 0 0 26-12" stroke-width="1.7" stroke-dasharray="13 5 4 6"/>
+    <path d="M35 10a23 23 0 0 1 17 28" stroke-width="2.1" stroke-dasharray="16 5 4 6"/>
+  </g>
+  <text x="32" y="38" text-anchor="middle" font-family="Georgia, serif" font-size="20" fill="#7b197d" letter-spacing="0">AD</text>
+</svg>

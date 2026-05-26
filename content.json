@@ -1,0 +1,21 @@
+{
+  "worum": {
+    "h1": "Worum geht es bei Reiki?",
+    "intro": "Reiki ist eine sanfte Form der Energiearbeit, die dich dabei unterstützt, zur Ruhe zu kommen.",
+    "text1": "Viele Menschen kommen zu mir mit Stress, innerer Unruhe oder Erschöpfung."
+  },
+
+  "ueberMich": {
+    "h1": "Über mich",
+    "text1": "Ich arbeite mit Reiki, weil mich stille, achtsame Prozesse begleiten.",
+    "text2": "Meine Arbeit ist ruhig, klar und individuell."
+  },
+
+  "angebot": {
+    "h1": "Angebot",
+    "session1": "Einzelsitzung Reiki",
+    "session1Desc": "60 Minuten, ruhige Einzelarbeit.",
+    "session2": "Fernreiki",
+    "session2Desc": "Unabhängig vom Ort."
+  }
+}

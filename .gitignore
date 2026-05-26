@@ -1,0 +1,32 @@
+# Local/editor files
+.DS_Store
+Thumbs.db
+.vscode/
+
+# Local working backups and handoff archives
+* - Kopie.*
+annaduleba-webdesign-code.zip
+
+# Old Reiki assets kept locally as backup, not needed for this webdesign site
+annadulebareiki.jpg
+annadulebareiki2.jpg
+flowers.png
+mohnblumenfeld.png
+reiki-balance.png
+Reiki-unterschrift.png
+reiki01*.jpg
+reiki1*.png
+reiki4.png
+reikiannaduleba*.png
+reikiannadulebakarlsruhe.jpg
+uebermich.jpg
+
+# Old/unused verification and placeholder files
+google*.html
+buchhalter-karlsruhe.html
+
+# Runtime/cache artifacts
+*.log
+
+# No npm build is used for this static site
+package-lock.json
