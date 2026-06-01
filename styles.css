@@ -2442,60 +2442,9 @@ body.page-webdesign-offer .site-header-overlay{
   color:var(--muted);
 }
 
-.running-costs{
-  padding:88px 0;
-  background:
-    linear-gradient(112deg, rgba(255,255,255,.96), rgba(246,242,234,.82)),
-    radial-gradient(circle at 86% 22%, rgba(222,0,167,.08), transparent 30%);
-  border-top:1px solid var(--line);
-  border-bottom:1px solid var(--line);
-}
-
-.running-costs__grid{
-  display:grid;
-  grid-template-columns:repeat(5, minmax(0, 1fr));
-  gap:14px;
-}
-
-.running-costs__grid article{
-  min-height:220px;
-  padding:22px;
-  border:1px solid rgba(115,22,114,.12);
-  border-radius:8px;
-  background:#fff;
-  box-shadow:0 14px 34px rgba(43,30,43,.05);
-}
-
-.running-costs__grid span{
-  color:var(--accent);
-  font-size:12px;
-  letter-spacing:.16em;
-}
-
-.running-costs__grid h3{
-  margin:38px 0 10px;
-  color:var(--accent-strong);
-  font-family:Georgia, 'Times New Roman', serif;
-  font-size:26px;
-  font-weight:400;
-  line-height:1.1;
-}
-
-.running-costs__grid p,
-.running-costs__note{
-  color:var(--muted);
-}
-
-.running-costs__note{
-  max-width:860px;
-  margin:34px 0 0;
-  font-size:19px;
-}
-
 @media (max-width:980px){
   .price-grid,
-  .factor-list,
-  .running-costs__grid{
+  .factor-list{
     grid-template-columns:1fr 1fr;
   }
 }
@@ -2503,8 +2452,7 @@ body.page-webdesign-offer .site-header-overlay{
 @media (max-width:760px){
   .prices-intro,
   .price-grid,
-  .factor-list,
-  .running-costs__grid{
+  .factor-list{
     grid-template-columns:1fr;
   }
 }
