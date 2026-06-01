@@ -1,5 +1,5 @@
-const CACHE_VERSION = "anna-duleba-offline-v7";
-const RUNTIME_CACHE = "anna-duleba-runtime-v7";
+const CACHE_VERSION = "anna-duleba-offline-v8";
+const RUNTIME_CACHE = "anna-duleba-runtime-v8";
 
 const PRECACHE_URLS = [
   "/",
@@ -17,7 +17,6 @@ const PRECACHE_URLS = [
   "/styles.css?v=legal-1",
   "/main.js?v=legal-4",
   "/content.js?v=local-first-4",
-  "/admin.js?v=cloudinary-6",
   "/firebase.js?v=firestore-longpoll-1",
   "/header.html?v=legal-1",
   "/footer.html?v=legal-1",
