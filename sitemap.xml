@@ -8,9 +8,15 @@
   </url>
   <url>
     <loc>https://annaduleba-webdesign.de/angebot.html</loc>
-    <lastmod>2026-05-26</lastmod>
+    <lastmod>2026-06-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://annaduleba-webdesign.de/webdesign-karlsruhe.html</loc>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
   </url>
   <url>
     <loc>https://annaduleba-webdesign.de/worum.html</loc>

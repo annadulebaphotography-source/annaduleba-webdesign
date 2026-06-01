@@ -1,10 +1,11 @@
-const CACHE_VERSION = "anna-duleba-offline-v8";
-const RUNTIME_CACHE = "anna-duleba-runtime-v8";
+const CACHE_VERSION = "anna-duleba-offline-v9";
+const RUNTIME_CACHE = "anna-duleba-runtime-v9";
 
 const PRECACHE_URLS = [
   "/",
   "/index.html",
   "/angebot.html",
+  "/webdesign-karlsruhe.html",
   "/galerie.html",
   "/kontakt.html",
   "/ueber-mich.html",
