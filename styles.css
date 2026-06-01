@@ -2184,6 +2184,59 @@ body.page-webdesign-offer .site-header-overlay{
   gap:16px;
 }
 
+.local-studio-window{
+  position:relative;
+  min-height:clamp(240px, 34vw, 430px);
+  margin:34px 0 28px;
+  border:1px solid rgba(115,22,114,.14);
+  border-radius:8px;
+  overflow:hidden;
+  background:
+    linear-gradient(135deg, rgba(255,255,255,.42), rgba(115,22,114,.16)),
+    radial-gradient(circle at 18% 28%, rgba(222,0,167,.18), transparent 34%),
+    repeating-linear-gradient(90deg, rgba(115,22,114,.06) 0 1px, transparent 1px 22px),
+    linear-gradient(145deg, rgba(255,255,255,.9), rgba(246,242,234,.84));
+  background-size:cover;
+  background-position:center;
+  box-shadow:0 22px 58px rgba(43,30,43,.08);
+}
+
+.local-studio-window[data-image-url]:not([data-image-url=""]){
+  background-size:cover;
+  background-position:center;
+}
+
+.local-studio-window::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(90deg, rgba(35,23,35,.44), rgba(35,23,35,.10) 48%, rgba(255,255,255,0));
+  pointer-events:none;
+}
+
+.local-studio-window__caption{
+  position:absolute;
+  left:28px;
+  bottom:26px;
+  max-width:420px;
+  color:#fff;
+  text-shadow:0 2px 18px rgba(35,23,35,.34);
+}
+
+.local-studio-window__caption span{
+  display:block;
+  margin-bottom:8px;
+  font-size:12px;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+}
+
+.local-studio-window__caption p{
+  margin:0;
+  font-size:18px;
+  line-height:1.45;
+}
+
 .offer-grid article{
   min-height:310px;
   padding:24px;
@@ -2193,6 +2246,32 @@ body.page-webdesign-offer .site-header-overlay{
     linear-gradient(145deg, rgba(255,255,255,.82), rgba(222,0,167,.055)),
     repeating-linear-gradient(90deg, rgba(115,22,114,.08) 0 1px, transparent 1px 18px);
   box-shadow:0 18px 46px rgba(43,30,43,.07);
+}
+
+.offer-grid .offer-card--with-image{
+  padding:0;
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+}
+
+.offer-card__image{
+  min-height:150px;
+  background:
+    linear-gradient(135deg, rgba(115,22,114,.12), rgba(255,255,255,.18)),
+    radial-gradient(circle at 28% 22%, rgba(222,0,167,.16), transparent 32%),
+    linear-gradient(145deg, rgba(255,255,255,.7), rgba(246,242,234,.9));
+  background-size:cover;
+  background-position:center;
+}
+
+.offer-card__image[data-image-url]:not([data-image-url=""]){
+  background-size:cover;
+  background-position:center;
+}
+
+.offer-card__content{
+  padding:24px;
 }
 
 .offer-grid span{
@@ -2208,6 +2287,10 @@ body.page-webdesign-offer .site-header-overlay{
   font-size:28px;
   font-weight:400;
   line-height:1.1;
+}
+
+.offer-card__content h3{
+  margin-top:34px;
 }
 
 .offer-grid p{
